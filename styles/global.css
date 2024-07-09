@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modalContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(177, 177, 177, 0.7);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBody {
+  background-color: rgb(251, 224, 255);
+  max-width: 320px;
+  min-width: 300px;
+  padding: 25px 30px;
+  border-radius: 8px;
+}
+
+.modalHidden {
+  display: none;
+}/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,286 @@
+//================== varibales =======================
+
+// $mainMargin: 10px 20px 10px 35px;
+// $mainTransition: all 0.5s ease;
+
+// p {
+//   transition: $mainTransition;
+//   // margin: $mainTransition;
+// }
+
+//=================== nesting ========================
+
+// body {
+//   nav {
+//     ul {
+//       margin: $mainMargin;
+//       li {
+//         color: teal;
+//       }
+
+//       .render,
+//       #hello,
+//       button {
+//         &:active {
+//           background-color: brown;
+//         }
+//         &:hover {
+//         }
+//       }
+
+//       // button:active{}
+//       // button:hover{}
+//       // button::before{}
+
+//       &:hover {
+//         color: red;
+//       }
+//     }
+//   }
+
+//   main {
+//     #section1 {
+//     }
+//     #section2 {
+//     }
+//     #section2 {
+//     }
+//   }
+
+//   footer {
+//   }
+// }
+
+// nav {
+//   ul {
+//     margin: $mainMargin;
+//     li {
+//       color: teal;
+//     }
+//   }
+// }
+
+// main {
+//   #section1 {
+//   }
+//   #section2 {
+//   }
+//   #section2 {
+//   }
+// }
+
+// footer {
+// }
+
+//==================== import ========================
+
+// @import "variables/vars";
+// @import "sections/nav";
+// @import "sections/main";
+// @import "sections/footer";
+
+//================ mixin/mixin() =====================
+
+// 1.1
+
+// $fontSize: 18px;
+
+// @mixin mainBorderMixin {
+//   border-radius: 15px;
+//   border: 2px solid green;
+// }
+
+// @mixin mainBlockStyles {
+//   display: block;
+//   max-width: 250px;
+//   font-size: $fontSize;
+//   // @include mainBorderMixin;
+// }
+
+// @mixin mixedStyle {
+//   @include mainBorderMixin;
+//   @include mainBlockStyles;
+// }
+
+// h1 {
+//   @include mainBorderMixin;
+//   background-color: red;
+// }
+
+// 1.2
+
+// @mixin FlexContainer($justify, $align) {
+//   display: flex;
+//   justify-content: $justify;
+//   align-items: $align;
+// }
+
+// .block {
+//   @include FlexContainer(end, end);
+// }
+
+// @mixin MainFontStyle($size, $weight) {
+//   font-size: $size; // rem
+//   font-weight: $weight;
+// }
+
+// html {
+//   @include MainFontStyle(18px, 400);
+// }
+
+// @media screen and (max-width: 450px) {
+//   html {
+//     @include MainFontStyle(16px, 600);
+//   }
+// }
+
+// @media screen and (max-width: 250px) {
+//   html {
+//     @include MainFontStyle(12px, 600);
+//   }
+// }
+
+//=================== extend =========================
+
+// h1 {
+//   color: red;
+//   background-color: teal;
+// }
+
+// h2 {
+//   @extend h1;
+//   font-size: 18px;
+// }
+
+// #block {
+// }
+
+// h3 {
+//   @extend h2;
+//   border-radius: 12px;
+// }
+
+//===================================================
+//===================== scss ========================
+
+// @import "variables.scss";
+// @import "components/sections/index";
+// @import "components/ui/index";
+
+// h2 {
+//   color: $primary-color;
+//   margin: $primary-margin;
+//   font-size: $primary-font-size;
+// }
+
+// .textList {
+//   color: $primary-color-reda;
+//   margin: $primary-margin;
+//   border: 2px solid green;
+//   font-size: $primary-font-size;
+// }
+
+//====================================================
+//=================== mixins =========================
+
+// @mixin globalTextStyle {
+//   color: red;
+//   font-size: 25px;
+//   font-weight: 600;
+//   font-family: Cambria, serif;
+// }
+
+// @mixin flexDisplay {
+//   @include globalTextStyle;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// @mixin primary-border($width, $color: pink) {
+//   border: $width solid $color;
+// }
+
+// h2 {
+//   @include globalTextStyle;
+//   background-color: teal;
+//   @include flexDisplay;
+//   @include primary-border(2px, red);
+// }
+
+//=============== динамические миксины ===============
+
+// @mixin FlexContainer($justify, $align) {
+//   display: flex;
+//   justify-content: $justify;
+//   align-items: $align;
+// }
+
+// .block {
+//   @include FlexContainer(end, end);
+// }
+
+//====================================================
+//================== extend ==========================
+
+// h2 {
+//   color: red;
+//   font-size: 36px;
+// }
+
+// button {
+//   @extend h2;
+//   width: 120px;
+// }
+
+// #canvas {
+//   border: 1px solit violet;
+//   margin: 10px;
+// }
+
+//====================================================
+//============ Переключатель постов ==================
+
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+// .triggers {
+//   max-width: 215px;
+//   margin: 10px auto;
+//   display: flex;
+//   gap: 15px;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .triggers > button {
+//   width: 100px;
+//   border: 1px solid blue;
+//   border-radius: 8px;
+//   background-color: transparent;
+//   cursor: pointer;
+//   transition: all 0.3s ease-out;
+// }
+// .triggers > button:hover {
+//   background-color: blue;
+//   color: white;
+// }
+// #container {
+//   padding: 10px;
+//   border: 2px solid blue;
+//   margin: 0 15px;
+//   border-radius: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+//====================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
